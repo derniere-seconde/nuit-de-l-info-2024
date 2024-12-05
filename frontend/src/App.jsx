@@ -1,9 +1,16 @@
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/header/Header";
+import Home from "./views/Home";
+import Newsletter from "./views/Newsletter";
+
 function App() {
   return (
     <>
-      <div>
-        <h1 className="font-bold text-red-800">Hello derniere seconde</h1>
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/newsletter" element={<Newsletter />} />
+      </Routes>
     </>
   );
 }
