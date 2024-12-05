@@ -2,7 +2,7 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nex
 
 const Header = () => {
   return (
-    <Navbar shouldHideOnScroll>
+    <Navbar shouldHideOnScroll = "true">
       <NavbarBrand>
         <p className="font-bold text-inherit"> nuit de l'info</p>
       </NavbarBrand>

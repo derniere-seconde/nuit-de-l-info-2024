@@ -3,10 +3,8 @@ import styled from "styled-components";
 
 const Grid = ({ children, ...props }) => {
   return (
-    <GridC className="flex h-screen flex-col justify-between " {...props}>
-      <div className="bg-gradient-to-t from-transparent to-black h-unit-2xl"></div>
+    <GridC className="flex min-h-screen flex-col justify-between " {...props}>
       <Wrapper> {children} </Wrapper>
-      <div className="bg-gradient-to-t from-black to-transparent h-unit-3xl"></div>
     </GridC>
   );
 };
