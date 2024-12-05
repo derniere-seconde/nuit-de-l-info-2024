@@ -3,5 +3,5 @@
 To clone this repository, run the following command:
 
 ```bash
-git clone --recurse-submodules git@github.com:derniere-seconde/nuit-de-l-info-2024.git
+git clone git@github.com:derniere-seconde/nuit-de-l-info-2024.git
 ```
