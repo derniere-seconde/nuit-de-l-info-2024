@@ -1,12 +1,14 @@
-import TextInput from "../components/TextInput";
+import Input from "../components/TextInput";
+import Button from "../components/Button";
 
 const Newsletter = () => {
   return (
     <div>
       <h1 className="font-bold text-red-800">Newsletter</h1>
-      <TextInput label="Prénom" />
-      <TextInput label="Nom" />
-      <TextInput label="Email" />
+      <Input label="Prénom" />
+      <Input label="Nom" />
+      <Input label="Email" />
+      <Button />
     </div>
   );
 };

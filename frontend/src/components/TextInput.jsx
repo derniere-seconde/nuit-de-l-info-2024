@@ -1,17 +1,17 @@
-import { Field, Input, Label } from "@headlessui/react";
+import { Field, Input as InputUI, Label } from "@headlessui/react";
 import PropTypes from "prop-types";
 
-const TextInput = ({ label }) => {
+const Input = ({ label }) => {
   return (
     <Field>
       <Label>{label}</Label>
-      <Input name={label} type="text" />
+      <InputUI name={label} type="text" />
     </Field>
   );
 };
 
-TextInput.propTypes = {
+Input.propTypes = {
   label: PropTypes.string.isRequired,
 };
 
-export default TextInput;
+export default Input;
