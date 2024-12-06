@@ -9,6 +9,7 @@ const HumanBody = () => {
             <div
             style={{
                 position: 'relative',
+                top: "-20%",
                 width: '100%',
                 maxWidth: '800px', 
                 margin: '0 auto', 
