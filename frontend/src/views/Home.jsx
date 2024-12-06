@@ -68,11 +68,9 @@ const Home = () => {
       </div>
       <div className="flex flex-col justify-center items-center gap-4 p-8">
         <h1 className="font-bold text-3xl">Podcasts</h1>
-        <VideoPlayer
-          title="podcast 1"
-          link="https://www.youtube.com/watch?v=B9synWjqBn8"
-        ></VideoPlayer>
-        <VideoPlayer title="podcast 2"></VideoPlayer>
+        <VideoPlayer title="podcast 1" link="PuW5dPBYM9g"></VideoPlayer>{" "}
+        <VideoPlayer title="podcast 1" link="b4-C8Rn3lwE"></VideoPlayer>
+        <VideoPlayer title="podcast 1" link="TvRL5_TlZ9g"></VideoPlayer>{" "}
       </div>
     </>
   );
