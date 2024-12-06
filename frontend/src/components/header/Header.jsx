@@ -17,12 +17,12 @@ const Header = () => {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link color="foreground" href="/">
-            page 1
+            Home
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
           <Link href="/test" aria-current="page">
-            page 2
+            Poke quiz
           </Link>
         </NavbarItem>
         <NavbarItem>
