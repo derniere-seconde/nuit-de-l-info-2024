@@ -26,8 +26,8 @@ class TurtleScene extends Phaser.Scene {
     bg.displayWidth = this.sys.canvas.width;
     bg.displayHeight = this.sys.canvas.height;
     bg.setOrigin(0, 0);
-    this.turtle = new Turtle(this, 400, 100);
-    this.food = new Food(this, 400, 300);
+    this.turtle = new Turtle(this);
+    this.food = new Food(this, 350, 250);
     this.physics.world.enable(this.food);
     this.physics.world.enable(this.turtle.body[0]);
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -71,7 +71,7 @@ class Turtle {
     this.keyLock = false;
     this.moveEvents = [];
     this.bodyParts = [];
-    this.body.push(this.scene.physics.add.sprite(100, 300, "turtleRight"));
+    this.body.push(this.scene.physics.add.sprite(50, 250, "turtleRight"));
     turtleHead = this.body[0];
     turtleHead.setCollideWorldBounds(true);
     turtleHead.body.onWorldBounds = true;
@@ -128,9 +128,9 @@ class Turtle {
     turtleHead.y += this.direction.y * this.bodyPartLength;
 
     if (
-      turtleHead.x > 600 ||
+      turtleHead.x > this.scene.game.config.width ||
       turtleHead.x < 0 ||
-      turtleHead.y > 600 ||
+      turtleHead.y > this.scene.game.config.height ||
       turtleHead.y < 0
     )
       return;
