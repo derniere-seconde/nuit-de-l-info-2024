@@ -4,7 +4,7 @@ import { useSpring, animated } from "@react-spring/web";
 import level1 from "../assets/sealevels/level1.png";
 import level2 from "../assets/sealevels/level2.png";
 import level3 from "../assets/sealevels/level3.png";
-import { Image } from "@nextui-org/react";
+import { Image, Progress } from "@nextui-org/react";
 import { useLocation } from "react-router-dom";
 
 const Test = () => {
@@ -21,27 +21,52 @@ const Test = () => {
   const [offsets, setOffsets] = useState([0.6, 0.7, 0.79]); // Dynamic offsets
   const [scrollVal, setScrollVal] = useState(0.3); // Scroll position
 
+  const [value, setValue] = React.useState(100);
+  const [health, setheath] = React.useState(100);
+
   useEffect(() => {
+    const selectedPokemon = location.pathname.split("/")[2];
+
     if (selectedPokemon) {
       setSprite(`${prefix}${selectedPokemon.toLowerCase()}.gif`);
+      console.log(sprite);
+      setValue(100);
     }
-  }, [selectedPokemon]);
-  // Question and answers data
+  }, []);
+
   const questions = [
     {
-      question: "What is the capital of France?",
-      answers: ["Paris", "Berlin", "Madrid", "Rome"],
-      correct: 0,
+      question:
+        "Pourquoi les récifs coralliens sont-ils souvent comparés aux os dans le corps humain ?",
+      answers: [
+        "Ils absorbent les nutriments pour l'océan.",
+        "Ils servent de support structurel pour les écosystèmes marins.",
+        "Ils produisent de l'oxygène pour les poissons.",
+        "Ils protègent les océans des tempêtes.",
+      ],
+      correct: 1,
     },
     {
-      question: "What is 2 + 2?",
-      answers: ["3", "4", "5", "6"],
-      correct: 0,
+      question:
+        "Quelle partie du corps humain peut être comparée au système de courants océaniques ?",
+      answers: [
+        " Le système nerveux.",
+        "Le système digestif.",
+        "Le système circulatoire.",
+        "Le système immunitaire.",
+      ],
+      correct: 2,
     },
     {
-      question: "What is the largest ocean?",
-      answers: ["Atlantic", "Pacific", "Indian", "Arctic"],
-      correct: 0,
+      question:
+        "Quel est le point commun entre l'océan et les joueurs de LOL ?",
+      answers: [
+        "Ils sont imbuvables.",
+        "Ils sont extrêmement salés.",
+        "Ils sont sales.",
+        "La réponse D.",
+      ],
+      correct: 3,
     },
   ];
 
@@ -50,10 +75,21 @@ const Test = () => {
   // Handle button click
   const handleAnswerClick = (answer, id) => {
     // Optionally, move to the next question
+    setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+
     if (id != questions[currentQuestionIndex].correct) {
       decreaseOffsets();
+    } else {
+      setValue((prev) => prev - 45);
     }
-    setCurrentQuestionIndex((prevIndex) => (prevIndex + 1) % questions.length);
+    if (currentQuestionIndex >= 2) {
+      if (health === 100) {
+        alert("you won");
+      } else {
+        alert("try again");
+      }
+      window.location.reload();
+    }
   };
 
   const spring1 = useSpring({
@@ -79,6 +115,7 @@ const Test = () => {
 
   const decreaseOffsets = () => {
     setOffsets((prev) => prev.map((offset) => offset - 0.1));
+    setheath((prev) => prev - 45);
 
     if (parallax.current) {
       parallax.current.scrollTo(scrollVal);
@@ -86,7 +123,6 @@ const Test = () => {
       if (scrollVal === 0.7) {
         alert("lost");
         window.location.reload();
-
       }
     }
   };
@@ -107,27 +143,40 @@ const Test = () => {
         }}
       >
         <div className="w-[50vw] h-[15vh] bg-black p-1 border-4 border-indigo-500/75 bg-opacity-40">
-          {currentQuestion.question}
-        </div>
+          {currentQuestion != null && currentQuestion.question}
+        </div>{" "}
         <div className="h-[40vh] relative">
           <div className="absolute top-0 right-0 p-4">
             <Image src={Magikarp} className="w-full h-48 object-contain" />
+            <Progress
+              className="pt-4"
+              size="lg"
+              color="danger"
+              value={value}
+            ></Progress>
           </div>
           {/* Bottom-right */}
           <div className="absolute bottom-0 left-0 p-4">
             <Image src={sprite} className="w-full h-48 object-contain" />
+            <Progress
+              className="pt-4"
+              size="lg"
+              color="danger"
+              value={health}
+            ></Progress>
           </div>
         </div>
         <div className="w-[50vw] h-[20vh] border-4 border-indigo-500/75 p-1 bg-opacity-40 bg-black grid grid-cols-2 grid-rows-2 gap-1">
-          {currentQuestion.answers.map((answer, index) => (
-            <button
-              key={index}
-              className="pbutton h-[80%]"
-              onClick={() => handleAnswerClick(answer, index)}
-            >
-              {answer}
-            </button>
-          ))}
+          {currentQuestion != null &&
+            currentQuestion.answers.map((answer, index) => (
+              <button
+                key={index}
+                className="pbutton h-[80%]"
+                onClick={() => handleAnswerClick(answer, index)}
+              >
+                {answer}
+              </button>
+            ))}
         </div>
       </div>
       <div style={{ width: "100%", height: "100%", background: "#253237" }}>

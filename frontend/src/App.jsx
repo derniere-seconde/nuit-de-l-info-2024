@@ -12,7 +12,7 @@ function App() {
 
   return (
     <NextUIProvider navigate={navigate}>
-      <main className="dark text-foreground bg-background">
+      <main className="dark font-mono text-foreground bg-background">
         <Header />
         <Grid>
           {" "}
