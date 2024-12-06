@@ -16,12 +16,14 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.7.1",
     "framer-motion": "^11.13.1",
+    "phaser": "^3.87.0",
     "react": "^18.3.1",
     "react-confetti": "^6.1.0",
     "react-confetti-explosion": "^2.1.2",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.2",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "toastify-js": "^1.12.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
