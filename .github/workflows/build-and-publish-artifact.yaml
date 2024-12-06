@@ -26,18 +26,21 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16" # Replace with your required Node.js version
+        working-directory: frontend
 
       # Install dependencies
       - name: Install dependencies
         run: npm install
+        working-directory: frontend
 
       # Run build script to generate the artifact
       - name: Build project
         run: npm run build
+        working-directory: frontend
 
       # Upload the build artifact (e.g., 'dist' or 'build' folder)
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
-          path: ./dist # or ./build (replace with your actual build directory)
+          path: frontend/dist # or ./build (replace with your actual build directory)
