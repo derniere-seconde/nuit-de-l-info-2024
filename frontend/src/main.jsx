@@ -3,15 +3,12 @@ import { BrowserRouter, useNavigate } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 import { NextUIProvider } from "@nextui-org/react";
-
-const navigate = useNavigate();
+import { StrictMode } from "react";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <NextUIProvider navigate={navigate}>
-        <App />
-      </NextUIProvider>
+      <App />
     </BrowserRouter>
   </StrictMode>,
 );
