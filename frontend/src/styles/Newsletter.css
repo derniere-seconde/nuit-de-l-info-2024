@@ -1,0 +1,145 @@
+* General form styling */ .newsletter-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  /* Ocean gradient background */
+  font-family: "Arial", sans-serif;
+  color: #ffffff;
+  /* White text for contrast */
+}
+
+.newsletter-form {
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.9);
+  /* Semi-transparent white background */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.newsletter-form h2 {
+  font-size: 24px;
+  color: #0072ff;
+  /* Ocean blue */
+  margin-bottom: 20px;
+}
+
+.newsletter-form label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0072ff;
+  /* Ocean blue for labels */
+  margin-bottom: 5px;
+}
+
+.newsletter-form input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #d0e8ff;
+  /* Light ocean blue border */
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.newsletter-form input:focus {
+  border-color: #0072ff;
+  /* Dark ocean blue focus */
+  box-shadow: 0 0 5px rgba(0, 114, 255, 0.5);
+}
+
+/* Moving/Static button */
+.submit-button {
+  position: absolute;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  /* Ocean gradient */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button.running {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  /* Reverse gradient */
+  cursor: not-allowed;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button.static {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  /* Aqua-green to deep blue */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #d0e8ff;
+  /* Light blue background */
+  border-radius: 6px;
+  margin-top: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  /* Ocean gradient for progress */
+  transition: width 0.1s linear;
+  border-radius: 6px;
+}
+
+/* CAPTCHA styling */
+.captcha {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.captcha input {
+  width: 80%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #d0e8ff;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.captcha button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.captcha button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  /* Hover effect for button */
+}

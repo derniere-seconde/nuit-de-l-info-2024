@@ -5,6 +5,9 @@ import turtleRight from "../assets/turtle-right.png";
 import turtleLeft from "../assets/turtle-left.png";
 import turtleUp from "../assets/turtle-up.png";
 import turtleDown from "../assets/turtle-down.png";
+import { EventBus } from "./EventBus";
+
+let score = 0;
 
 class TurtleScene extends Phaser.Scene {
   constructor() {
@@ -160,6 +163,7 @@ class Turtle {
     this.body[i].setTexture(textureMap[directionKey]);
   }
   grow() {
+    score += 1;
     let newPart = this.scene.physics.add.sprite(
       -1 * this.bodyPartLength,
       -1 * this.bodyPartLength,
@@ -180,6 +184,11 @@ class Turtle {
     this.bodyParts.forEach((newPart) => {
       newPart.body.enable = false;
     });
+    if (score >= 1) {
+      EventBus.emit("gameOver", score);
+    } else {
+      this.resetGame();
+    }
   }
   resetGame = () => {
     this.scene.create();

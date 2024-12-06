@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import PropTypes from "prop-types";
 import Phaser from "phaser";
 
-const Game = ({ config }) => {
+const GameContainer = ({ config }) => {
   useEffect(() => {
     const game = new Phaser.Game(config);
 
@@ -12,8 +12,8 @@ const Game = ({ config }) => {
   return <div id="game-container"></div>;
 };
 
-Game.propTypes = {
+GameContainer.propTypes = {
   config: PropTypes.object.isRequired,
 };
 
-export default Game;
+export default GameContainer;
