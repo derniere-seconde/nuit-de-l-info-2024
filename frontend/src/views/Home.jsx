@@ -66,9 +66,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div>
-        <HeartCount count={5.5} />
-
+      <div className="flex flex-col justify-center items-center gap-4 p-8">
+        <h1 className="font-bold text-3xl">Podcasts</h1>
         <VideoPlayer
           title="podcast 1"
           link="https://www.youtube.com/watch?v=B9synWjqBn8"
