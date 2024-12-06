@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.overflow-x-auto::-webkit-scrollbar {
+    height: 2px;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+    border-radius: 1px;
+  }
+
+  /* For Firefox */
+  .overflow-x-auto {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(26, 26, 26) transparent;
+  }
+
+  .pbutton {
+    color: #fff;
+    background-color: #4c4ec9;
+    padding: 15px 40px 15px 40px;
+    margin: 10px;
+     font-size: 14px;
+ font-family: "Press Start 2P", system-ui;
+    border: 0;
+    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36 ;
+    cursor: pointer;
+}
+.pbutton:active {
+    transform: translateY(5px);
+    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black,inset 0px 5px #00000038;
+}
