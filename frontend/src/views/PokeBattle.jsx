@@ -73,10 +73,7 @@ const Test = () => {
           </div>
           {/* Bottom-right */}
           <div className="absolute bottom-0 left-0 p-4 ">
-            <Image
-              src={sprite}
-              className="w-full h-48 object-contain"
-            />
+            <Image src={sprite} className="w-full h-48 object-contain" />
           </div>
         </div>
         <div className="w-[50vw] h-[20vh] border-4 border-indigo-500/75 p-1 bg-opacity-40 bg-black grid grid-cols-2 grid-rows-2 gap-1 ">
