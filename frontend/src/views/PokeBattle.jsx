@@ -15,7 +15,6 @@ const Test = () => {
     "https://img.pokemondb.net/sprites/black-white/anim/back-normal/";
 
   const location = useLocation();
-  const selectedPokemon = location.pathname.split("/")[2];
 
   const [sprite, setSprite] = useState(Magikarp);
   const [offsets, setOffsets] = useState([0.6, 0.7, 0.79]); // Dynamic offsets
@@ -33,6 +32,15 @@ const Test = () => {
       setValue(100);
     }
   }, []);
+
+  useEffect(() => {
+    const selectedPokemon = location.pathname.split("/")[2];
+
+    if (selectedPokemon) {
+      setSprite(`${prefix}${selectedPokemon.toLowerCase()}.gif`);
+      console.log(sprite);
+    }
+  }, [value]);
 
   const questions = [
     {

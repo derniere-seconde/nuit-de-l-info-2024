@@ -15,7 +15,6 @@ function App() {
       <main className="dark font-mono text-foreground bg-background">
         <Header />
         <Grid>
-          {" "}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/battle/*" element={<Battle />} />
