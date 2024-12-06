@@ -8,10 +8,10 @@ const navigate = useNavigate();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <NextUIProvider navigate={navigate}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <NextUIProvider navigate={navigate}>
         <App />
-      </BrowserRouter>
-    </NextUIProvider>
+      </NextUIProvider>
+    </BrowserRouter>
   </StrictMode>,
 );
