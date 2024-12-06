@@ -192,6 +192,16 @@ const Newsletter = () => {
   // For simplicity, we just change the label text slightly on hover in inline style or by adding a class.
   const [hoveredField, setHoveredField] = useState(null);
 
+  const clearFields = () => {
+    setFormData(initialFormData);
+    setDisplayedData(
+      Object.keys(initialFormData).reduce((acc, key) => {
+        acc[key] = "";
+        return acc;
+      }, {}),
+    );
+  };
+
   return (
     <div className="newsletter-page">
       {/* Display cookiesCount as a trollish metric */}
@@ -236,7 +246,7 @@ const Newsletter = () => {
         {isCaptchaVisible && (
           <div className="flex flex-col gap-2">
             {isRobot && <Tcha setIsRobot={setIsRobot} />}
-            <Button isDisabled={isRobot} />
+            <Button isDisabled={isRobot} onClick={clearFields} />
           </div>
         )}
 
