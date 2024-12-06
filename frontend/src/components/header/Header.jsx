@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <Navbar shouldHideOnScroll="true">
       <NavbarBrand>
-        <p className="font-bold text-inherit"> nuit de l&apos;info</p>
+        <Link color="foreground" href="/">
+          <p className="font-bold text-inherit"> Race for water💧</p>
+        </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
@@ -25,7 +27,7 @@ const Header = () => {
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/newsletter">
-            page 3
+            Infolettre
           </Link>
         </NavbarItem>
       </NavbarContent>

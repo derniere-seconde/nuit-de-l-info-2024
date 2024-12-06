@@ -6,7 +6,6 @@ import Battle from "./views/PokeBattle";
 import Grid from "./components/Grid";
 import Test from "./views/Test";
 import { NextUIProvider } from "@nextui-org/react";
-import HumanBody from "./views/HumanBody";
 
 function App() {
   const navigate = useNavigate();
@@ -22,7 +21,6 @@ function App() {
             <Route path="/battle/*" element={<Battle />} />
             <Route path="/test" element={<Test />} />
             <Route path="/newsletter" element={<Newsletter />} />
-            <Route path="/human_body" element={<HumanBody />} />
           </Routes>
         </Grid>
       </main>

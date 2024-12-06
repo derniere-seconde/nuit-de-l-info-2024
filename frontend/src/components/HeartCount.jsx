@@ -44,7 +44,7 @@ HeartCount.propTypes = {
 };
 
 HeartCount.defaultProps = {
-  size: "1.5rem",
+  size: "3rem",
 };
 
 export default HeartCount;
