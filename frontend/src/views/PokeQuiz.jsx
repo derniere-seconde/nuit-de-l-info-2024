@@ -1,7 +1,7 @@
 import React from "react";
 import StarterOptions from "../components/StarterOptions";
 
-const Test = () => {
+const PokeQuiz = () => {
   return (
     <div>
       <StarterOptions></StarterOptions>
@@ -9,4 +9,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default PokeQuiz;

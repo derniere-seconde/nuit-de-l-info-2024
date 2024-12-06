@@ -1,46 +1,28 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useSpring, animated } from "@react-spring/web";
 import level1 from "../assets/sealevels/level1.png";
 import level2 from "../assets/sealevels/level2.png";
 import level3 from "../assets/sealevels/level3.png";
 import { Image, Progress } from "@nextui-org/react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import MagirkarpGIF from "../assets/magikarp-f.gif";
+import { starterList } from "../components/StarterOptions";
 
-const Test = () => {
+const PokeBattle = () => {
   const parallax = useRef(null);
-  const Magikarp =
-    "https://img.pokemondb.net/sprites/black-white/anim/normal/magikarp-f.gif";
-  const prefix =
-    "https://img.pokemondb.net/sprites/black-white/anim/back-normal/";
 
-  const location = useLocation();
+  const { pokemon } = useParams();
 
-  const [sprite, setSprite] = useState(Magikarp);
+  const selectedPokemon = starterList.find(
+    (starter) => starter.title === pokemon,
+  );
+
   const [offsets, setOffsets] = useState([0.6, 0.7, 0.79]); // Dynamic offsets
   const [scrollVal, setScrollVal] = useState(0.3); // Scroll position
 
   const [value, setValue] = React.useState(100);
   const [health, setheath] = React.useState(100);
-
-  useEffect(() => {
-    const selectedPokemon = location.pathname.split("/")[2];
-
-    if (selectedPokemon) {
-      setSprite(`${prefix}${selectedPokemon.toLowerCase()}.gif`);
-      console.log(sprite);
-      setValue(100);
-    }
-  }, []);
-
-  useEffect(() => {
-    const selectedPokemon = location.pathname.split("/")[2];
-
-    if (selectedPokemon) {
-      setSprite(`${prefix}${selectedPokemon.toLowerCase()}.gif`);
-      console.log(sprite);
-    }
-  }, [value]);
 
   const questions = [
     {
@@ -155,7 +137,7 @@ const Test = () => {
         </div>{" "}
         <div className="h-[40vh] relative">
           <div className="absolute top-0 right-0 p-4">
-            <Image src={Magikarp} className="w-full h-48 object-contain" />
+            <Image src={MagirkarpGIF} className="w-full h-48 object-contain" />
             <Progress
               className="pt-4"
               size="lg"
@@ -165,7 +147,10 @@ const Test = () => {
           </div>
           {/* Bottom-right */}
           <div className="absolute bottom-0 left-0 p-4">
-            <Image src={sprite} className="w-full h-48 object-contain" />
+            <Image
+              src={selectedPokemon.img}
+              className="w-full h-48 object-contain"
+            />
             <Progress
               className="pt-4"
               size="lg"
@@ -232,4 +217,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default PokeBattle;

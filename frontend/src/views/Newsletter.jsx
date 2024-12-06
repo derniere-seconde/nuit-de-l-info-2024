@@ -76,46 +76,8 @@ const Newsletter = () => {
     }));
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-
-    // Check if all fields are filled (unchanged)
-    const allFieldsFilled = Object.values(formData).every(
-      (value) => value.trim() !== "",
-    );
-
-    if (!allFieldsFilled) {
-      // Reset everything to initial state (unchanged)
-      setFormData(initialFormData);
-      setDisplayedData(
-        Object.keys(initialFormData).reduce((acc, key) => {
-          acc[key] = "";
-          return acc;
-        }, {}),
-      );
-
-      // Reset other state variables (unchanged)
-      setHoldProgress(0);
-      setIsCaptchaVisible(false);
-      setIsStatic(false);
-      setButtonMovesLeft(2);
-      setButtonStyle({
-        left: "50%",
-        top: "50%",
-        transform: "translate(-50%, -50%)",
-      });
-      // No alert message (unchanged)
-    } else {
-      // Successful submission logic (if any)
-      // Let's say if user somehow fills all fields and passes captcha, increment cookiesCount
-      // and console.log a message. (DARK UX ADDITION)
-      if (formData.weirdAnswer.trim().toLowerCase() === "42") {
-        console.log(
-          "You managed to submit successfully! Cookies count:",
-          cookiesCount,
-        );
-      }
-    }
+  const handleFormSubmit = (_e) => {
+    window.location.reload();
   };
 
   const handleMouseOver = () => {
@@ -170,7 +132,6 @@ const Newsletter = () => {
     }
   };
 
-  // Dark UX addition: random placeholders
   const randomPlaceholders = [
     "Type here... or not",
     "Enter something useless",
@@ -192,16 +153,6 @@ const Newsletter = () => {
   // For simplicity, we just change the label text slightly on hover in inline style or by adding a class.
   const [hoveredField, setHoveredField] = useState(null);
 
-  const clearFields = () => {
-    setFormData(initialFormData);
-    setDisplayedData(
-      Object.keys(initialFormData).reduce((acc, key) => {
-        acc[key] = "";
-        return acc;
-      }, {}),
-    );
-  };
-
   return (
     <div className="newsletter-page">
       {/* Display cookiesCount as a trollish metric */}
@@ -216,7 +167,7 @@ const Newsletter = () => {
         Cookies Count: {cookiesCount}
       </div>
 
-      <form className="newsletter-form" onSubmit={handleFormSubmit}>
+      <form className="newsletter-form">
         <h2>Formulaire d&apos;abonnement à l&apos;infolettre</h2>
 
         {/* Form fields with questions */}
@@ -246,7 +197,7 @@ const Newsletter = () => {
         {isCaptchaVisible && (
           <div className="flex flex-col gap-2">
             {isRobot && <Tcha setIsRobot={setIsRobot} />}
-            <Button isDisabled={isRobot} onClick={clearFields} />
+            <Button isDisabled={isRobot} onClick={handleFormSubmit} />
           </div>
         )}
 

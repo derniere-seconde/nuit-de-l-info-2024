@@ -1,73 +1,87 @@
-# La nuit de l'info 2024 - Équipe derniere seconde
+# La Nuit de l'Info 2024 - Équipe **Dernière Seconde**
 
-To clone this repository, run the following command:
+Bienvenue sur le dépôt de notre projet pour **La Nuit de l'Info 2024**, développé par l'équipe **Dernière Seconde**.
 
-```bash
-git clone git@github.com:derniere-seconde/nuit-de-l-info-2024.git
-```
+## 🛠️ Technologies utilisées
 
+Notre projet est construit avec **[Vite](https://vitejs.dev/)**, **[React](https://react.dev/)**, **[TailwindCSS](https://tailwindcss.com/)**, **[ESLint](https://eslint.org/)**, **[Prettier](https://prettier.io/)**, **[NextUI](https://nextui.org/)**
 
-# Parallèle entre océan et corps humain
+---
 
-## Océan et la circulation sanguine
+## 📋 Prérequis
 
-**Océan** : L'océan joue un rôle central dans la circulation mondiale de l’eau et des nutriments grâce aux courants océaniques, garantissant un équilibre écologique. De plus, Les écosystèmes océaniques, tels que les récifs coralliens, protègent les côtes des tempêtes et des tsunamis, jouant un rôle similaire à celui d’un système immunitaire global en atténuant les impacts des catastrophes naturelles.
+Assurez-vous que les éléments suivants sont installés sur votre machine avant de démarrer le projet :
 
-**Le sang** : Le sang transporte l’oxygène, les nutriments et les hormones vers les cellules tout en éliminant les déchets métaboliques. Ausi, les globules blans &ci protègent le corps contre les infections et maintient son intégrité en éliminant les agents pathogènes.
+- **[Node.js](https://nodejs.org/en/)** (version LTS recommandée).
 
-> **WARNING**
-> Un sang poluer ...
+---
 
-## Océan et les poumons
+## 🚀 Installation et démarrage
 
-**Océan** :  Les phytoplanctons océaniques, via la photosynthèse, produisent environ 50 à 70 % de l'oxygène atmosphérique. De plus, les océans absorbent une part significative de CO₂, jouant un rôle clé dans la régulation des gaz à effet de serre.
+1. **Clonez ce dépôt :**
 
-**Poumons** : Les poumons assurent les échanges gazeux vitaux : absorption d’oxygène pour alimenter les cellules et élimination du dioxyde de carbone produit par le métabolisme.
+   ```bash
+   git clone https://github.com/derniere-seconde/nuit-de-l-info-2024.git
+   ```
 
-> **WARNING**
-> ...
+2. **Installez les dépendances :**
 
-## Océan et le coeur
+   ```bash
+   npm install
+   ```
 
-**Océan** : Les courants océaniques et les échanges thermiques participent à la régulation du climat terrestre, en redistribuant la chaleur depuis l'équateur vers les pôles.
+3. **Lancez le serveur de développement :**
 
-**Le coeur** : Le cœur, en pompant le sang, régule la température interne du corps grâce à la distribution sanguine.
+   ```bash
+   npm run dev
+   ```
 
-> **WARNING**
-> ...
+4. **Pour créer une version optimisée pour la production :**
 
-## Océan et reins
+   ```bash
+   npm run build
+   ```
 
-**Océan** : Les mangroves, les récifs coralliens, et certaines espèces marines (comme les huîtres) agissent comme des systèmes naturels de filtration, nettoyant l’eau des polluants et nutriments excédentaires.
+---
 
-**Reins** : Les reins filtrent le sang, éliminant les déchets métaboliques et les toxines à travers l’urine, tout en régulant l’équilibre hydrique et électrolytique du corps.
+## 📂 Structure du projet
 
-> **WARNING**
-> ...
+Notre projet s'articule autour du thème **Rétro-gaming** (defi : [On veut du gros pixel !](https://www.nuitdelinfo.com/inscription/defis/453)) et se compose de quatre pages principales :
 
-## Océan et cerveau
+### **🏠 Page Home**
 
-**Océan** : En tant que régulateur global, l'océan influence les cycles climatiques et synchronise les systèmes planétaires via des interactions complexes avec l’atmosphère.
+- **Description** : Point d’entrée de l'application. Cette page représente un corps humain avec ses différents organes.  
+- **Interaction** : Cette page présente le parallèle entre cet organe et l’océan.  
+- **Objectif** : Sensibiliser les utilisateurs à l'importance des écosystèmes océaniques à travers une analogie avec le corps humain.
 
-**Le cerveau** : Le cerveau orchestre les fonctions corporelles, en contrôlant les systèmes nerveux et endocriniens, et en régulant les réponses au stress ou aux changements environnementaux.
+---
 
-> **WARNING**
-> ...
+### **🐾 Page Poke**
 
-## Océan et estomac
+- **Description** : Choisissez un Pokémon pour le combat du quizz !
+- **Défi associé** : Cette page implémente le défi [**Catch Them All**](https://www.nuitdelinfo.com/inscription/defis/469), qui consiste à capturer tous les Pokémon disponibles.
 
-**Océan** : L'océan agit comme un immense système de transformation des matières organiques. Les détritus, végétaux et animaux morts tombent au fond, où ils sont décomposés par des microorganismes marins (bactéries et champignons) en nutriments essentiels. 
+---
 
-**L'estomac** : L'estomac est le site de la première phase majeure de la digestion, où les aliments sont décomposés en leurs composants essentiels
+### **🧩 Page Quizz**
 
-> **WARNING**
-> ...
+- **Description** : Un quizz interactif pour tester les connaissances des utilisateurs sur les liens entre les organes du corps humain et l’océan.  
+- **Mécanique** :
+  - Chaque mauvaise réponse augmente le niveau de l'océan.
+  - Les mauvaises réponses réduisent les "vies" du joueur, le rapprochant de l'échec.
+- **Objectif** : Éducation et sensibilisation à la montée des eaux.
 
-## Océan et Intestin
+---
 
-**Océan** : Les zones côtières et benthiques (proches des fonds marins) jouent un rôle similaire à celui du côlon. Elles absorbent, filtrent, et recyclent les nutriments et les déchets, tout en offrant un habitat riche en biodiversité.
+### **📬 Page Newsletter**
 
-**Intestin** : Les intestins, particulièrement le côlon, absorbent l’eau et les nutriments finaux des aliments digérés. Ils hébergent un microbiote intestinal complexe
+- **Description** : Une page théorique pour recueillir les informations des utilisateurs.
+- **Défis associés** :
+  - [**Dark UX**](https://www.nuitdelinfo.com/inscription/defis/430) : Implémentation d’interfaces utilisateur volontairement trompeuses.
+  - [**Game Tcha**](https://www.nuitdelinfo.com/inscription/defis/443) : Intégration d'un jeu dans un CAPTCHA pour valider les soumissions.
 
-> **WARNING**
-> ...
+---
+
+## 🌟 Objectifs du projet
+
+Notre projet met en avant les parallèles entre les organes du corps humain et les écosystèmes océaniques, tout en intégrant des mécaniques de gamification et des défis spécifiques à **La Nuit de l'Info 2024**.

@@ -1,5 +1,4 @@
 import CorpsHumain from "../assets/corps-humain.png";
-import Organ from "./Organ";
 
 const HumanBody = () => {
   return (

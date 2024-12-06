@@ -1,10 +1,10 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Header from "./components/header/Header";
+import Header from "./components/Header";
 import Home from "./views/Home";
 import Newsletter from "./views/Newsletter";
-import Battle from "./views/PokeBattle";
+import PokeBattle from "./views/PokeBattle";
 import Grid from "./components/Grid";
-import Test from "./views/Test";
+import PokeQuiz from "./views/PokeQuiz";
 import { NextUIProvider } from "@nextui-org/react";
 
 function App() {
@@ -17,8 +17,8 @@ function App() {
         <Grid>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/battle/*" element={<Battle />} />
-            <Route path="/test" element={<Test />} />
+            <Route path="/battle/:pokemon" element={<PokeBattle />} />
+            <Route path="/poke-quiz" element={<PokeQuiz />} />
             <Route path="/newsletter" element={<Newsletter />} />
           </Routes>
         </Grid>

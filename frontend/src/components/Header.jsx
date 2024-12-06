@@ -21,7 +21,7 @@ const Header = () => {
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="/test" aria-current="page">
+          <Link href="/poke-quiz" aria-current="page">
             Poke quiz
           </Link>
         </NavbarItem>

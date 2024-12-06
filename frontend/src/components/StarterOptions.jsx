@@ -4,34 +4,36 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
-  ModalFooter,
   useDisclosure,
 } from "@nextui-org/react";
 
 import { Button, Image, Link } from "@nextui-org/react";
-import { useNavigate } from "react-router-dom";
 
 import Pokeball from "../assets/starters/pokeball.png";
 import Pokeball_o from "../assets/starters/pokeball_open.png";
 import QR from "../assets/qr.png";
 import poke1 from "../assets/starters/douda.gif";
 
+import CharmanderGIF from "../assets/charmander.gif";
+import SquirtleGIF from "../assets/squirtle.gif";
+import BulbasaurGIF from "../assets/bulbasaur.gif";
+
 // Define content for list
-const list = [
+export const starterList = [
   {
-    title: "Charmander",
+    title: "charmander",
     description: "Fire-type starter Pokémon",
-    img: "https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif",
+    img: CharmanderGIF,
   },
   {
-    title: "Squirtle",
+    title: "squirtle",
     description: "Water-type starter Pokémon",
-    img: "https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif",
+    img: SquirtleGIF,
   },
   {
-    title: "Bulbasaur",
+    title: "bulbasaur",
     description: "Grass-type starter Pokémon",
-    img: "https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif",
+    img: BulbasaurGIF,
   },
 ];
 
@@ -42,7 +44,7 @@ const StarterOptions = () => {
 
   const handleClick = (index) => {
     // Set selected starter on button click
-    setSelectedStarter(list[index]);
+    setSelectedStarter(starterList[index]);
     console.log(selectedStarter);
   };
 
@@ -77,7 +79,7 @@ const StarterOptions = () => {
 
       {/* Button Grid */}
       <div className="gap-4 grid grid-cols-3">
-        {list.map((item, index) => (
+        {starterList.map((item, index) => (
           <div key={index} className="flex items-center justify-center">
             <Button
               isIconOnly
@@ -97,11 +99,9 @@ const StarterOptions = () => {
       </div>
 
       {selectedStarter && (
-        <button className="pbutton ">
-          <Link color="foreground" href={`/battle/${selectedStarter.title}`}>
-            play
-          </Link>{" "}
-        </button>
+        <Link color="foreground" href={`/battle/${selectedStarter.title}`}>
+          <Button className="pbutton">play</Button>
+        </Link>
       )}
 
       <Button
@@ -119,14 +119,10 @@ const StarterOptions = () => {
 
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col gap-1">Scan me</ModalHeader>
-              <ModalBody>
-                <Image src={QR}></Image>
-              </ModalBody>
-            </>
-          )}
+          <ModalHeader className="flex flex-col gap-1">Scan me</ModalHeader>
+          <ModalBody>
+            <Image src={QR}></Image>
+          </ModalBody>
         </ModalContent>
       </Modal>
     </div>
