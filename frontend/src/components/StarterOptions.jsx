@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Button, Card, CardBody, Image } from "@nextui-org/react";
+import { Button, Card, CardBody, Image, Link } from "@nextui-org/react";
+import { useNavigate } from "react-router-dom";
+
 import Pokeball from "../assets/starters/pokeball.png";
 import Pokeball_o from "../assets/starters/pokeball_open.png";
 
@@ -33,7 +35,10 @@ const StarterOptions = () => {
   const handleClick = (index) => {
     // Set selected starter on button click
     setSelectedStarter(list[index]);
+    console.log(selectedStarter);
+
   };
+
 
   return (
     <div className="flex flex-col items-center space-y-4">
@@ -43,7 +48,7 @@ const StarterOptions = () => {
         <Image
           src={selectedStarter.img}
           alt={selectedStarter.title}
-          className="w-full h-64 object-contain"    
+          className="w-full h-64 object-contain"
         />
       )}
 
@@ -67,6 +72,14 @@ const StarterOptions = () => {
           </div>
         ))}
       </div>
+
+      {selectedStarter && (
+        <button className="pbutton ">
+          <Link color="foreground" href={`/battle/${selectedStarter.title}`}>
+            play
+          </Link>{" "}
+        </button>
+      )}
     </div>
   );
 };

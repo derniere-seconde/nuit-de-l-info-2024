@@ -20,7 +20,7 @@ const Header = () => {
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="/sea" aria-current="page">
+          <Link href="/test" aria-current="page">
             page 2
           </Link>
         </NavbarItem>
