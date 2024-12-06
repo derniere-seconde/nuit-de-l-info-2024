@@ -16,7 +16,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/battle/*" element={<Battle />} />
           <Route path="/test" element={<Test />} />
-
           <Route path="/newsletter" element={<Newsletter />} />
         </Routes>
       </Grid>

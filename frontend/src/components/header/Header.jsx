@@ -4,14 +4,13 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
 } from "@nextui-org/react";
 
 const Header = () => {
   return (
     <Navbar shouldHideOnScroll="true">
       <NavbarBrand>
-        <p className="font-bold text-inherit"> nuit de l'info</p>
+        <p className="font-bold text-inherit"> nuit de l&apos;info</p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
@@ -25,7 +24,7 @@ const Header = () => {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/2">
+          <Link color="foreground" href="/newsletter">
             page 3
           </Link>
         </NavbarItem>
