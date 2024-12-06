@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ODD 3 : Santé et Bien-Être</title>
+  <link rel="stylesheet" href="styles1.css">
+  <script src="scripts1.js" defer></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      font-family: Arial, sans-serif;
+    }
+
+    video#background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header, footer {
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 1.5em 0;
+    }
+
+    .content {
+      width: 100%;
+      padding: 2em 5%;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+      line-height: 1.8;
+      z-index: 1;
+    }
+
+    .content p {
+      margin-bottom: 1em;
+    }
+
+    footer a {
+      color: #4A90E2;
+      text-decoration: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      .content {
+        padding: 2em 10%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <video autoplay muted loop id="background-video">
+    <source src="images/background.mp4" type="video/mp4">
+    <source src="images/background.webm" type="video/webm">
+    Votre navigateur ne supporte pas les vidéos.
+  </video>
+
+  <header>
+    <h1 class="heading">ODD 3 : <span class="underline--magical">Santé & Bien-Être</span> pour Tous</h1>
+  </header>
+
+  <section class="content">
+    <h2>Garantir une vie en bonne santé et promouvoir le bien-être à tous les âges d'ici 2030</h2>
+    <p>L'ODD 3 vise à garantir la santé et le bien-être à tous les âges d'ici 2030. Il cible la réduction de la mortalité maternelle (&nbsp; &lt; &nbsp;70 décès pour 100 000 naissances), l'éradication des décès évitables chez les enfants de moins de cinq ans et la lutte contre les maladies transmissibles (VIH, tuberculose, paludisme) et non transmissibles (maladies cardiovasculaires, cancers, diabète).</p>
+
+    <p>L'UNICEF joue un rôle clé, notamment sur la santé maternelle et infantile, en élargissant l'accès aux soins pour les populations vulnérables. La couverture sanitaire universelle (CSU) est essentielle pour un accès équitable aux soins sans contraintes financières, bien que le financement reste un défi, surtout en Afrique et en Asie du Sud.</p>
+
+    <p>Enfin, l'ONU appelle à investir dans la recherche médicale et le renforcement des systèmes de santé pour mieux gérer les crises sanitaires mondiales. L'ODD 3 englobe la prévention, l'accès équitable aux soins et le bien-être global, nécessaires pour réduire les inégalités et améliorer les conditions de vie.</p>
+  </section>
+
+  <footer>
+    <p>Source: <a href="https://www.un.org/sustainabledevelopment/fr/health/">Nations Unies - ODD 3</a></p>
+  </footer>
+</body>
+
+</html>
+
+
